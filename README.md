@@ -1,8 +1,18 @@
 # Hawkerpreneur App
 
-Reddit where you can upvote your favourite hawker
-Hawkers can post new menu items
-Users could comment on posts
+Community
+* Upvote your favourite hawker
+* Hawkers can post new menu items
+* Users could comment on posts
+
+Content
+* Info
+* News
+
+Crowdfunding
+
+
+HawkeReddit 
 
 ## Getting started
 
