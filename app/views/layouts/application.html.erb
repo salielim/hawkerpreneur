@@ -9,6 +9,17 @@
   </head>
 
   <body>
+    <!-- Flash notices for Devise -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <!-- Log out for Devise -->
+    <div>
+        <% if user_signed_in? %>
+          <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+        <% end %>
+    </div>
+
     <%= yield %>
   </body>
 </html>
