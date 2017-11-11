@@ -32,6 +32,7 @@ class User < ApplicationRecord
                           email:auth.info.email,
                           username: "#{auth.info.first_name}_#{auth.info.last_name}",
                           password:Devise.friendly_token[0,20],
+                          image:auth.info.image,
                         )
       end    
     end

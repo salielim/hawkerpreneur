@@ -4,9 +4,12 @@
   <div>
     <% @users.each do |user| %>
       <div>
-        <%= link_to user.username, user %>
-        </br>
-        Email: <%= user.email %>
+        <%= image_tag user.image %>
+        <%= user.username %>
+        <%= link_to '(view Posts)', user %> 
+        | 
+        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+        <%= user.email %>
       </div>
     <% end %>
   </div>
