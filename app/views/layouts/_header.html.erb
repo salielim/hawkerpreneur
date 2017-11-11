@@ -11,10 +11,17 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "COMMUNITY",   '/community' %></li>
-        <li><%= link_to "INFO & NEWS",   '/info' %></li>
-        <li><%= link_to "CONTACT",   '/contact' %></li>
-        <li><%= link_to "CROWDFUNDING",   '#' %></li>
+        <li><%= link_to "Community",   '/community' %></li>
+        <li><%= link_to "Info & News",   '/info' %></li>
+        <li><%= link_to "Contact",   '/contact' %></li>
+        <li><%= link_to "Crowdfunding",   '#' %></li>
+        <li>
+          <% if user_signed_in? %>
+            <%= button_to 'LOGOUT', destroy_user_session_path, :method => :delete, :class => 'btn btn-lg' %>
+          <% else %>
+            <%= button_to 'LOGIN', '/users/sign_in', :class => 'btn btn-lg' %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>

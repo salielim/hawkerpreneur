@@ -9,17 +9,23 @@
   </head>
 
   <body>
-    <!-- Flash notices for Devise -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/header' %>
 
-    <!-- Log out for Devise -->
-    <div>
-        <% if user_signed_in? %>
-          <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-        <% end %>
-    </div>
+    <!-- Flash notices for Devise -->
+    <% if notice %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert %>    
+      <div class="alert alert-warning" role="alert">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
 
     <%= yield %>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>
