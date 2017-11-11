@@ -1,2 +1,82 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hawkerpreneur</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Hawkerpreneur</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">COMMUNITY</a></li>
+        <li><a href="#">NEWS & INFO</a></li>
+        <li><a href="#">CROWDFUNDING</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h3 class="margin">Celebrating our Hawker Heros</h3>
+  <img src="/assets/hawkerpreneurs.jpg" class="img-responsive img-circle margin" style="display:inline" alt="hawkerpreneurs" width="900" height="250">
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">Hawker as a viable career</h3>
+  <p>With the growing focus on preserving heritage, it has become trendy. Social and traditional media had been highlighting several stories of young professionals entering the hawker trade. A good education does not have to get in the way of one’s passion.</p>
+
+  <blockquote class="blockquote">
+    <p>“A common streak that runs within these young hawkers is the ability to sacrifice what we are in the present for what we want to become in future. The few young hawkers whom I know are often driven by a similar passion and love for hawker food — and a burning desire to contribute to the preservation and enhancement of this art form.”</p>
+    <footer class="blockquote-footer">Joel Chia owner of <cite title="Source Title">Truly Group</cite></footer>
+  </blockquote>
+  
+  <blockquote class="blockquote">
+    <p>“It’s always heartening to see young Singaporeans willing to put aside their previous endeavours to dive into this somewhat unorthodox and unpopular industry.”</p>
+    <footer class="blockquote-footer">Famous Hawker owner of <cite title="Source Title">Famous Stall</cite></footer>
+  </blockquote>
+
+  <a href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </a>
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">Hawkerpreneurs of the Month</h3><br>
+  <div class="row">
+    <div class="col-sm-4"> 
+      <img src="assets/nextgen.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <p>Know someone we can feature here? Send us an email and let us know!</p>
+    </div>
+    <div class="col-sm-4">
+     <img src="/assets/kellywong.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <p>After being a service banker for three years, Kelly Wong decided to become a hawker at the age of 23. With no prior experience or background in cooking, she became apprenticed in the the art and skill of cooking wanton noodles under a Hong Kong chef who has 52 years of experience under his belt – her father Master Wong Wai Keung.</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="assets/loiser.jpg" class="img-responsive margin" style="width:100%; height:380px;" alt="Image">
+      <p>Ms Lois Er could have worked in air-conditioned comfort if she had stayed in her last job with tech-startup Skycart. But she was bent on giving hawker-preneurship a try.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Copyright 2017, Hawkerpreneurs</p> 
+</footer>
+
+</body>
+</html>
