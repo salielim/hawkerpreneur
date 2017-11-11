@@ -16,6 +16,10 @@ gem 'omniauth-facebook'
 gem 'rails', '~> 5.0.6'
 gem 'bootstrap-sass', '3.3.7'
 
+# Pagination
+gem 'will_paginate',           '3.1.5'
+gem 'bootstrap-will_paginate', '1.0.0'
+
 # Databases
 group :development, :test do
   gem 'sqlite3'
