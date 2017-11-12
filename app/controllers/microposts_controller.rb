@@ -1,5 +1,6 @@
 class MicropostsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     if params[:tag]
       @microposts = Micropost.tagged_with(params[:tag])

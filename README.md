@@ -2,21 +2,23 @@
  
 Community Posts (/microposts)
 
+* Protected - only viewable if user is logged in
 * Create posts about favourite hawker personalities, stalls, dishes and more.
 * Upload pictures of food, new menu items, hawker chefs and more
 * Tag the hawker centre
+ 
+Community Members (/users)
+
+* Protected - only viewable if user is logged in
+* Network and meet other Hawkerpreneurs and hawker enthusiasts
+* View posts of each member
  
 Hawker Centres (/hawkers)
 
 * View hawker centres location in the map
 * Click on pin on the map to be directed to posts tagged with the hawker centre’s name
 * Similarly, click on the hawker centre’s name to be directed to related posts
- 
-Community Members (/users)
 
-* Network and meet other Hawkerpreneurs and hawker enthusiasts
-* View posts of each member
- 
 Info & News (/info)
 
 * One-stop info for Hawkerpreneurs

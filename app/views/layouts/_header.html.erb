@@ -11,9 +11,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Posts",   '/microposts' %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Posts",   '/microposts' %></li>
+          <li><%= link_to "Community",   '/users' %></li>
+        <% end %>
         <li><%= link_to "Hawkers",   '/hawkers' %></li>
-        <li><%= link_to "Community",   '/users' %></li>
         <li><%= link_to "Info & News",   '/info' %></li>
         <li><%= link_to "Contact",   '/contact' %></li>
         <li>
