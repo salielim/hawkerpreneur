@@ -1,14 +1,21 @@
-<div class="container-fluid container-space bg-1 text-center">
+<div class='container-space text-center micropost-card'>
   <h3><%= @microposts.title %>
-    <small>
-      by <%= link_to @microposts.user.username, @microposts.user %>
-    </small>
+  <small>
+    by <%= link_to @microposts.user.username, @microposts.user %>
+  </small>
   </h3>
+
+  <% if @microposts.picture %>
+  <%= image_tag(@microposts.picture, class: 'text-enter') %>
+  <% end %>
+  </br>
+
   <%= @microposts.content %>
   </br>
   <small>
-    Posted <%= time_ago_in_words(@microposts.created_at) %> ago.
-  </small>
+  <%=raw tag_links(@microposts.all_tags)%>
   </br>
-  <%= link_to 'Go back', '/microposts' %>  
+  Posted <%= time_ago_in_words(@microposts.created_at) %> ago.
+  </small>
+  </div>
 </div>

@@ -79,7 +79,7 @@ input, select, textarea {
 
 .centered-img-text {
   position: absolute;
-  top: 1.5em;
+  top: 15px;
   left: 5%;
   color: #000000;
   cursor: pointer;
@@ -91,17 +91,18 @@ input, select, textarea {
   color: white;
 }
 
+.micropost-img {
+  width: 970px;
+  min-height: 60px;
+  background: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 .hawker-card {
   border: 1px solid #ffffff;
   border-radius: 10px; 
   margin: 20px 200px;
-}
-
-.micropost-img {
-  width: 970px;
-  min-height: 200px;
-  background: #ffffff;
-  cursor: pointer;
 }
 
 #map {

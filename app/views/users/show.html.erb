@@ -9,7 +9,7 @@
     <% if @user.microposts.any? %>
       <h3>Posts (<%= @user.microposts.count %>)</h3>
       <ol>
-        <%= render @microposts %>
+        <%= render @user.microposts %>
       </ol>
     <% end %>
     <%= link_to 'Go back', '/users' %> 

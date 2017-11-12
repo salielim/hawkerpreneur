@@ -14,7 +14,7 @@ class MicropostsController < ApplicationController
       flash[:success] = 'Micropost created!'
       redirect_to micropost_path(@micropost)
     else
-      flash[:error] = 'Micropost not created!'
+      flash[:error] = 'Micropost not created! Title and post content are required fields.'
     end
   end
 

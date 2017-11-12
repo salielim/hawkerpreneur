@@ -1,15 +1,30 @@
 <div class="container-fluid container-space bg-1 text-center">
   <h2>Create new post</h2>
-  <%= form_for(@micropost) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
+  <%= form_for Micropost.new do |f| %>
     <div class='field'>
-      <%= f.text_field :title, placeholder: 'Title', class: 'form-control', size: 60 %>
+    <%= f.text_field :title, placeholder: 'Title', class: 'form-control', size: 60 %>
     </div>
+
+    <div class="container-img">
+      <div class="centered-img-text" onclick="uploadImg()">
+        <span class="glyphicon glyphicon-picture"></span> 
+        Upload Image <small>(using Filestack API)</small>
+      </div>
+    </div>
+
+    <img id="post-img" class="micropost-img" onclick="uploadImg()" class="btn btn-default btn-lg btn-block">
+    <%= f.hidden_field(:picture, id: 'hidden_input_img') %>
+
     <div class='field'>
-      <%= f.text_area :content, placeholder: 'Your post...', class: 'form-control', cols: 60, rows: 8 %>
+      <%= f.text_area :content, placeholder: 'Your post...', class: 'form-control', cols: 3, rows: 8 %>
     </div>
+
+    <div class='field'>
+      <%= f.text_field :all_tags, placeholder: 'Hawker centre name', class: 'form-control' %>
+    </div>
+    
     <%= f.submit 'Post', class: 'btn btn-default btn-lg btn-block' %>
   <% end %>
   <br/>
-  <%= link_to 'Go back', 'posts' %>
+  <%= link_to 'Go back', '/microposts' %>
 </div>
