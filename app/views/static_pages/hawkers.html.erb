@@ -1,4 +1,7 @@
-<div id="result">
+<div class="container-fluid bg-1 text-center">
+  <h1 class="margin">Hawker Centres</h1>
+  <p>List from <%= link_to 'Data.gov.sg API', 'https://data.gov.sg/dataset/list-of-government-markets-hawker-centres' %></p>
+  <div id="result"></div>
 </div>
 
 <script>
@@ -9,9 +12,15 @@ function getHawkerCentres() {
     async: true,
     dataType: "json",
     success: function(data) {
-      for (i = 0; i < 5; i++) {
+      for (i = 0; i < 16; i++) {
         console.log(data.result.records[i].name_of_centre);
         console.log(data.result.records[i].location_of_centre);
+
+        var hawkerCentreName = data.result.records[i].name_of_centre;
+
+        var hawkerCentreLocation = data.result.records[i].location_of_centre;
+
+        $("#result").append("<div class='hawker-card'><b>" + hawkerCentreName + "</b></br>" + hawkerCentreLocation + "</div>")
       }
     },
     error: function(errorMessage){
