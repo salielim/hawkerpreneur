@@ -1,3 +1,5 @@
+<script src="https://static.filestackapi.com/v3/filestack.js"></script>
+
 <div class="container-fluid container-space bg-1 text-center">
   <h1 class="margin">Community Posts</h1>
   <h2>Create new post</h2>
@@ -5,9 +7,21 @@
     <div class='field'>
     <%= f.text_field :title, placeholder: 'Title', class: 'form-control', size: 60 %>
     </div>
+
+    <div class="container-img">
+      <div class="centered-img-text" onclick="uploadImg()">
+        <span class="glyphicon glyphicon-picture"></span> 
+        Upload Image
+      </div>
+    </div>
+
+    <img id="post-img" width="1000" height="200" onclick="uploadImg()" class="btn btn-default btn-lg btn-block">
+    <%= f.hidden_field(:picture, id: 'hidden_input_img') %>
+
     <div class='field'>
       <%= f.text_area :content, placeholder: 'Your post...', class: 'form-control', cols: 60, rows: 8 %>
     </div>
+    
     <%= f.submit 'Post', class: 'btn btn-default btn-lg btn-block' %>
   <% end %>
   </br>
@@ -15,3 +29,17 @@
   <h2>Latest Posts</h2>
   <%= render @microposts %>
 </div>
+
+<script>
+  var client = filestack.init('ADhfNTI1iSdqsnDGXNNrnz');
+  function uploadImg() {
+    client.pick({
+      accept:'image/*',
+      maxFiles: 1,
+      }).then(function(result) {
+        console.log(result.filesUploaded[0].url);
+        $("#post-img").attr('src', result.filesUploaded[0].url);
+        $("#hidden_input_img").val(result.filesUploaded[0].url);
+      });
+  }
+</script>

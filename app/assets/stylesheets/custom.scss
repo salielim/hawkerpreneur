@@ -76,3 +76,17 @@ input, select, textarea {
   margin-left: 120px;
   width: 1000px;
 }
+
+.centered-img-text {
+  position: absolute;
+  top: 1.5em;
+  left: 5%;
+  color: #000000;
+  cursor: pointer;
+}
+
+.container-img {
+  position: relative;
+  text-align: center;
+  color: white;
+}

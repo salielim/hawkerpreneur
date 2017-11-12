@@ -1,9 +1,15 @@
-<div id="micropost-<%= micropost.id %>" class="micropost-card">
+<div id='micropost-<%= micropost.id %>' class='micropost-card'>
   <h3><%= micropost.title %>
     <small>
       by <%= link_to micropost.user.username, micropost.user %>
     </small>
   </h3>
+  
+  <% if micropost.picture %>
+    <%= image_tag(micropost.picture, class: 'text-enter') %>
+  <% end %>
+  </br>
+  
   <%= micropost.content %>
   </br>
   <small>
