@@ -1,0 +1,12 @@
+<div class="container-fluid bg-1 text-center">
+  <% if @micropost.errors.any? %>
+  <div>
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@micropost.errors.count, "error") %>.
+      <% @micropost.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
