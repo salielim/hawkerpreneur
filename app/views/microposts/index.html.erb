@@ -3,7 +3,7 @@
   <h2>Create new post</h2>
   <%= form_for Micropost.new do |f| %>
     <div class='field'>
-      <%= f.text_field :title, placeholder: 'Title', class: 'form-control', size: 60 %>
+    <%= f.text_field :title, placeholder: 'Title', class: 'form-control', size: 60 %>
     </div>
     <div class='field'>
       <%= f.text_area :content, placeholder: 'Your post...', class: 'form-control', cols: 60, rows: 8 %>

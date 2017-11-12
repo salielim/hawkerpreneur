@@ -12,16 +12,10 @@
   <body>
     <%= render 'layouts/header' %>
 
-    <!-- Flash notices for Devise -->
-    <% if notice %>
-      <div class="alert alert-success" role="alert">
-        <%= notice %>
-      </div>
-    <% end %>
-
-    <% if alert %>    
-      <div class="alert alert-warning" role="alert">
-        <p class="alert"><%= alert %></p>
+    <!-- Flash notices -->
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-grey">
+        <%= message %>
       </div>
     <% end %>
 

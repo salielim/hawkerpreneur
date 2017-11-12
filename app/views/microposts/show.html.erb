@@ -1,0 +1,14 @@
+<div class="container-fluid container-space bg-1 text-center">
+  <h3><%= @microposts.title %>
+    <small>
+      by <%= link_to @microposts.user.username, @microposts.user %>
+    </small>
+  </h3>
+  <%= @microposts.content %>
+  </br>
+  <small>
+    Posted <%= time_ago_in_words(@microposts.created_at) %> ago.
+  </small>
+  </br>
+  <%= link_to 'Go back', '/microposts' %>  
+</div>
