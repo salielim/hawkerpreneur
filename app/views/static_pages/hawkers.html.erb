@@ -40,32 +40,29 @@
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEa8zq4oJ1oTuLhaikUbvD-ZiXMa5Q7aA&callback=initMap">
 </script>
 
-</script>
-
 <script>
-function getHawkerCentres() {
-  $.ajax({
-    type: "GET",
-    url: "https://data.gov.sg/api/action/datastore_search?resource_id=8f6bba57-19fc-4f36-8dcf-c0bda382364d&limit=15",
-    async: true,
-    dataType: "json",
-    success: function(data) {
-      for (i = 0; i < 16; i++) {
-        console.log(data.result.records[i].name_of_centre);
-        console.log(data.result.records[i].location_of_centre);
+  function getHawkerCentres() {
+    $.ajax({
+      type: "GET",
+      url: "https://data.gov.sg/api/action/datastore_search?resource_id=8f6bba57-19fc-4f36-8dcf-c0bda382364d&limit=15",
+      async: true,
+      dataType: "json",
+      success: function(data) {
+        for (i = 0; i < 16; i++) {
+          console.log(data.result.records[i].name_of_centre);
+          console.log(data.result.records[i].location_of_centre);
 
-        var hawkerCentreName = data.result.records[i].name_of_centre;
-        var hawkerCentreLocation = data.result.records[i].location_of_centre;
+          var hawkerCentreName = data.result.records[i].name_of_centre;
+          var hawkerCentreLocation = data.result.records[i].location_of_centre;
 
-        $("#result").append("<div class='hawker-card'><b><a href='/tags/" + hawkerCentreName + "#latest-posts'>" + hawkerCentreName + "</a></b></br>" + hawkerCentreLocation + "</div>")
+          $("#result").append("<div class='hawker-card'><b><a href='/tags/" + hawkerCentreName + "#latest-posts'>" + hawkerCentreName + "</a></b></br>" + hawkerCentreLocation + "</div>")
+        }
+      },
+      error: function(errorMessage){
+        alert("Sorry, there's an error. You might have hit the rate limit of the Data.gov.sg API, or it may be down.");
+        $("#result").append("Sorry, there's an error. </br> You might have hit the rate limit of the Data.gov.sg API, or it may be down.")
       }
-    },
-    error: function(errorMessage){
-      alert("Sorry, there's an error. You might have hit the rate limit of the Data.gov.sg API, or it may be down.");
-      $("#result").append("Sorry, there's an error. </br> You might have hit the rate limit of the Data.gov.sg API, or it may be down.")
-    }
-  })
-}
-
-getHawkerCentres();
+    })
+  }
+  getHawkerCentres();
 </script>
