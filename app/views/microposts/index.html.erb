@@ -13,7 +13,7 @@
     <div class="container-img">
       <div class="centered-img-text" onclick="uploadImg()">
         <span class="glyphicon glyphicon-picture"></span> 
-        Upload Image
+        Upload Image <small>(using Filestack API)</small>
       </div>
     </div>
 
@@ -34,7 +34,8 @@
   </br>
   <h2 id="latest-posts">Latest Posts</h2>
   <%= render @microposts %>
-  <%= link_to "Back to top",   '#top' %>
+  <%= link_to "Create a post",   '#top' %> | 
+  <%= link_to "Back to top",   '#latest-posts' %>
 </div>
 
 <script>

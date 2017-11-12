@@ -1,8 +1,46 @@
 <div class="container-fluid bg-1 text-center">
   <h1 class="margin">Hawker Centres</h1>
-  <p>List from <%= link_to 'Data.gov.sg API', 'https://data.gov.sg/dataset/list-of-government-markets-hawker-centres' %></p>
+  <p>List from <%= link_to 'Data.gov.sg API', 'https://data.gov.sg/dataset/list-of-government-markets-hawker-centres' %> | Map by <%= link_to 'GoogleMaps API', 'https://developers.google.com/maps/' %></p>
+  <div id="map"></div>
   <div id="result"></div>
 </div>
+
+<script>
+  function initMap() {
+    var singapore = {lat: 1.3521, lng: 103.8198};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 11,
+      center: singapore
+    });
+    var adamRoad = new google.maps.Marker({
+      position: new google.maps.LatLng(1.3241, 103.8142),
+      map: map
+    });
+    var amoyStreet = new google.maps.Marker({
+      position: new google.maps.LatLng(1.2792, 103.8466),
+      map: map
+    });
+    var bedokFood = new google.maps.Marker({
+      position: new google.maps.LatLng(1.320353, 103.955472),
+      map: map
+    });
+
+    google.maps.event.addListener(adamRoad, 'click', function() {
+      window.location.href = '/tags/Adam%20Road%20Food%20Centre#latest-posts';
+    });
+    google.maps.event.addListener(amoyStreet, 'click', function() {
+      window.location.href = '/tags/Amoy%Street%20Food%20Centre#latest-posts';
+    });
+    google.maps.event.addListener(bedokFood, 'click', function() {
+      window.location.href = '/tags/Bedok%20Food%20Centre#latest-posts';
+    });
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEa8zq4oJ1oTuLhaikUbvD-ZiXMa5Q7aA&callback=initMap">
+</script>
+
+</script>
 
 <script>
 function getHawkerCentres() {
@@ -17,15 +55,14 @@ function getHawkerCentres() {
         console.log(data.result.records[i].location_of_centre);
 
         var hawkerCentreName = data.result.records[i].name_of_centre;
-
         var hawkerCentreLocation = data.result.records[i].location_of_centre;
 
         $("#result").append("<div class='hawker-card'><b><a href='/tags/" + hawkerCentreName + "#latest-posts'>" + hawkerCentreName + "</a></b></br>" + hawkerCentreLocation + "</div>")
       }
     },
     error: function(errorMessage){
-      alert("GET Error");
-      $("#result").prepend("Sorry, there's an error. </br> Data.gov.sg API might be down..")
+      alert("Sorry, there's an error. You might have hit the rate limit of the Data.gov.sg API, or it may be down.");
+      $("#result").append("Sorry, there's an error. </br> You might have hit the rate limit of the Data.gov.sg API, or it may be down.")
     }
   })
 }
