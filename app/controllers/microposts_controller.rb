@@ -1,7 +1,11 @@
 class MicropostsController < ApplicationController
 
   def index
-    @microposts = Micropost.all
+    if params[:tag]
+      @microposts = Micropost.tagged_with(params[:tag])
+    else
+      @microposts = Micropost.all
+    end
   end
 
   def create
@@ -24,6 +28,6 @@ class MicropostsController < ApplicationController
   private
 
     def micropost_params
-      params.require(:micropost).permit(:title, :content, :picture, :hawker)
+      params.require(:micropost).permit(:title, :content, :picture, :hawker_centre, :all_tags)
     end
 end

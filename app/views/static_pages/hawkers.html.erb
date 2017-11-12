@@ -20,7 +20,7 @@ function getHawkerCentres() {
 
         var hawkerCentreLocation = data.result.records[i].location_of_centre;
 
-        $("#result").append("<div class='hawker-card'><b>" + hawkerCentreName + "</b></br>" + hawkerCentreLocation + "</div>")
+        $("#result").append("<div class='hawker-card'><b><a href='/tags/" + hawkerCentreName + "#latest-posts'>" + hawkerCentreName + "</a></b></br>" + hawkerCentreLocation + "</div>")
       }
     },
     error: function(errorMessage){

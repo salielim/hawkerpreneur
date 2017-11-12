@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get  '/info', to: 'static_pages#info'
   get  '/contact', to: 'static_pages#contact'
   get  '/hawkers', to: 'static_pages#hawkers'
+  get 'tags/:tag', to: 'microposts#index', as: "tag"  
   resources :users, only: [:index, :show]
   resources :microposts, only: [:create, :index, :show, :destroy]
 end

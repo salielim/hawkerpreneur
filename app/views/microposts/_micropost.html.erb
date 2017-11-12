@@ -13,6 +13,8 @@
   <%= micropost.content %>
   </br>
   <small>
+    <%=raw tag_links(micropost.all_tags)%>
+    </br>
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
   </small>
 </div>
