@@ -1,0 +1,25 @@
+<div id="result">
+</div>
+
+<script>
+function getHawkerCentres() {
+  $.ajax({
+    type: "GET",
+    url: "https://data.gov.sg/api/action/datastore_search?resource_id=8f6bba57-19fc-4f36-8dcf-c0bda382364d&limit=15",
+    async: true,
+    dataType: "json",
+    success: function(data) {
+      for (i = 0; i < 5; i++) {
+        console.log(data.result.records[i].name_of_centre);
+        console.log(data.result.records[i].location_of_centre);
+      }
+    },
+    error: function(errorMessage){
+      alert("GET Error");
+      $("#result").prepend("Sorry, there's an error. </br> Data.gov.sg API might be down..")
+    }
+  })
+}
+
+getHawkerCentres();
+</script>

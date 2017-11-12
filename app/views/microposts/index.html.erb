@@ -2,7 +2,9 @@
 
 <div class="container-fluid container-space bg-1 text-center">
   <h1 class="margin">Community Posts</h1>
-  <h2>Create new post</h2>
+  <h2><%= link_to "Click here to view latest posts",   '#latest-posts' %></h2>
+  </br>
+  <h2>Create a new post</h2>
   <%= form_for Micropost.new do |f| %>
     <div class='field'>
     <%= f.text_field :title, placeholder: 'Title', class: 'form-control', size: 60 %>
@@ -26,8 +28,9 @@
   <% end %>
   </br>
   </br>
-  <h2>Latest Posts</h2>
+  <h2 id="latest-posts">Latest Posts</h2>
   <%= render @microposts %>
+  <%= link_to "Back to top",   '#top' %>
 </div>
 
 <script>
