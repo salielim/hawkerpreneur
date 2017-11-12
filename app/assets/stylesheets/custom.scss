@@ -60,3 +60,13 @@ p {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+input, select, textarea {
+  color: black;
+}
+
+.micropost-card {
+  border: 1px solid #ffffff;
+  border-radius: 10px; 
+  margin: 20px auto;
+}

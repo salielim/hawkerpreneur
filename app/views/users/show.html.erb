@@ -1,18 +1,17 @@
-<div class="container-fluid bg-1 text-center">
+<div class="container-fluid container-space bg-1 text-center">
   <div class="row">
     <section>
-      <h1>
+      <h1 class="margin">
         <%= @user.username %>
       </h1>
       <%= image_tag @user.image %>
     </section>
     <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <h3>Posts (<%= @user.microposts.count %>)</h3>
       <ol>
         <%= render @microposts %>
       </ol>
-      <%= will_paginate @microposts %>
     <% end %>
-    <%= link_to '(back)', '/users' %> 
+    <%= link_to 'Go back', '/users' %> 
   </div>
 </div>
