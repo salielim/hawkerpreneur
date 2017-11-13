@@ -4,7 +4,9 @@
   <div>
     <% @users.each do |user| %>
       <div>
-        <%= image_tag user.image %>
+        <% if user.image %>
+          <%= image_tag user.image %>
+        <% end %>
         <%= user.username %>
         <%= link_to '(view posts)', user %> 
         | 

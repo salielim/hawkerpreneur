@@ -4,7 +4,9 @@
       <h1 class="margin">
         <%= @user.username %>
       </h1>
-      <%= image_tag @user.image %>
+      <% if @user.image %>
+        <%= image_tag @user.image %>
+      <% end %>
     </section>
     <% if @user.microposts.any? %>
       <h3>Posts (<%= @user.microposts.count %>)</h3>
