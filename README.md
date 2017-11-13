@@ -6,7 +6,7 @@ Objective: You are a startup interested to not only sustain the hawker culture b
 ## Stack
 * Backend: Ruby on Rails
 * Frontend: jQuery, HTML, SCSS
-* Database: PostgreSQL
+* Database: Development - SQLite3, Production - PostgreSQL
 
 ## Database Models
 ![Hawkerpreneur DB](https://i.imgur.com/zbaxFT8.png)
