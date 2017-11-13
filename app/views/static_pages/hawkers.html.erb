@@ -1,6 +1,6 @@
 <div class="container-fluid bg-1 text-center">
   <h1 class="margin">Hawker Centres</h1>
-  <p>List from <%= link_to 'Data.gov.sg API', 'https://data.gov.sg/dataset/list-of-government-markets-hawker-centres' %> | Map by <%= link_to 'GoogleMaps API', 'https://developers.google.com/maps/' %></p>
+  <p>List from <%= link_to 'Data.gov.sg API', 'https://data.gov.sg/dataset/list-of-government-markets-hawker-centres' %> (only first 10 results shown) | Map by <%= link_to 'GoogleMaps API', 'https://developers.google.com/maps/' %> (only first 3 hawkers shown)</p>
   <div id="map"></div>
   <div id="result"></div>
 </div>
@@ -44,7 +44,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEa8zq4oJ1oTuLhaikUbvD-Zi
   function getHawkerCentres() {
     $.ajax({
       type: "GET",
-      url: "https://data.gov.sg/api/action/datastore_search?resource_id=8f6bba57-19fc-4f36-8dcf-c0bda382364d&limit=15",
+      url: "https://data.gov.sg/api/action/datastore_search?resource_id=8f6bba57-19fc-4f36-8dcf-c0bda382364d&limit=10",
       async: true,
       dataType: "json",
       success: function(data) {
