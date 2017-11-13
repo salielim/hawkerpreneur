@@ -9,6 +9,7 @@ Objective: You are a startup interested to not only sustain the hawker culture b
 * Database: PostgreSQL
 
 ## Database Models
+![Hawkerpreneur DB](https://i.imgur.com/zbaxFT8.png)
 [View database diagram](https://repository.genmymodel.com/salielim/hawkerpreneur)
  
 ## APIs Used
