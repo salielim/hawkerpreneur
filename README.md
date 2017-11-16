@@ -17,6 +17,12 @@ Objective: You are a startup interested to not only sustain the hawker culture b
 * Filestack API for image upload
 * Data.gov.sg API for list of government hawker centres
 * GoogleMaps API for location of hawker centres
+
+## Ruby Gems Used
+* Figaro
+* Omniauth Facebook
+* Devise
+* Bootstrap
  
 ## Deployed on Cloud
 * Implemented Secure Sockets Layer (SSL)
